@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  /* font size */
+  --fs-body: 1.6rem;
+  --fs-menu-active: 2.4rem;
+  --fs-menu-off: 2.1rem;
+  --fs-title: 4.8rem;
+  --fs-button: 1.4rem;
+  --fs-text: 1.8rem;
+
+  /* Font Family */
+  --ff-body: 'Roboto';
+
+  /* Font weight */
+  --fw-menu-active: bold;
+  --fw-menu-off: normal;
+  --fw-button: bold;
+
+  /* line height */
+  --lh-menu: 2.1rem;
+  --lh-title: 125%;
+  --lh-text: 160%;
+
+  /* Color */
+  --hue: 240;
+  --c-menu-active: hsl(var(--hue), 0%, 100%);
+  --c-menu-off: hsl(var(--hue), 7%, 78%);
+  --c-title: hsl(var(--hue), 9%, 89%);
+  --c-text: hsl(var(--hue), 9%, 89%);
+  --c-button: hsl(var(--hue), 0%, 100%);
+  --c-button-border: hsl(var(--hue), 0%, 100%);
+  --c-button-background: hsla(var(--hue), 0%, 100%, 0%);
+  --c-button-background-hover: hsl(var(--hue), 0%, 100%);
+  --c-button-text-hover: hsl(197, 97%, 31%);
+}
+
+body {
+  font-size: var(--fs-body);
+  font-family: var(--ff-body);
+  min-width: 100vh;
+}
+
+#home {
+  background: url(./assets/mountains-universe-1.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#exploration {
+  background: url(./assets/mountains-universe-3.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#universe {
+  background: url(./assets/mountains-universe-2.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  text-transform: uppercase;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+  margin: 4rem 7.2rem;
+}
+
+ul {
+  display: flex;
+  gap: 3.2rem;
+}
+
+a {
+  line-height: var(--lh-menu);
+
+  color: var(--c-menu-off);
+  font-size: var(--fs-menu-off);
+  font-weight: normal;
+}
+
+li:after {
+  display: block;
+  content: '';
+  border-bottom: solid 2px var(--c-menu-active);
+  padding-bottom: 2%;
+  transform: scaleX(0);
+  transition: transform 300ms ease-in-out;
+}
+
+li:hover:after {
+  transform: scaleX(1);
+}
+
+a:hover {
+  transform: scale(1);
+}
+
+.active a {
+  color: var(--c-menu-active);
+  font-size: var(--fs-menu-active);
+  font-weight: bold;
+}
+
+h1, h2 {
+  font-size: var(--fs-title);
+  line-height: var(--lh-title);
+  color: var(--c-title);
+  margin-bottom: 2.4rem;
+}
+
+p {
+  font-size: var(--fs-text);
+  color: var(--c-text);
+  line-height: var(--lh-text);
+}
+
+.home-page {
+  position: absolute;
+  top: 45%;
+  left:50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.home-page button {
+  width: 25rem;
+  height: 4.8rem;
+  padding: 1.2rem 3.2rem;
+  border: .2rem solid var(--c-button-border);
+  border-radius: .5rem;
+  background-color: var(--c-button-background);
+
+  font-size: var(--fs-button);
+  font-weight: bold;
+  color: var(--c-button);
+}
+
+.home-page button:hover {
+  background-color: var(--c-button-background-hover);
+  color: var(--c-button-text-hover);
+
+  cursor: pointer;
+}
+
+.exploratio-page, .universe-page {
+  margin: 6.3rem 10rem;
+  width: 64.8rem;
+}
