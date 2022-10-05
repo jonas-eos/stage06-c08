@@ -20,13 +20,16 @@ export default class Router {
    */
   handle() {
     const { pathname } = window.location;
+    const pageIdentificator = pathname.substring(1) || 'home';
     const route = this.#routes[pathname];
 
     fetch(route)
     .then(page => page.text())
     .then(html => document.getElementById('app').innerHTML = html);
 
-    document.querySelector('body').setAttribute("id",`${pathname.substring(1) || 'home'}`);
+    document.querySelector('body').setAttribute("id",pageIdentificator);
+    document.querySelector('.active').classList.remove('active');
+    document.querySelector(`.${pageIdentificator}`).classList.add('active');
   };
 
   /**
